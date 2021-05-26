@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- To refresh  -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      /* div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      } */
+
+      html, body {
+      height: 100%;
+      background-color: #152733;
+      overflow: visible;
+    }
+
+
+    .form-holder {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          /* min-height: 100vh; */
+    }
+
+    .form-holder .form-content {
+        position: relative;
+        text-align: center;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding: 60px;
+    }
+
+    .form-content .form-items {
+        border: 3px solid #333333;
+        padding: 40px;
+        display: inline-block;
+        width: 75%;
+        min-width: 540px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        text-align: left;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+      .form-content h3 {
+      color: #fff;
+      text-align: left;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      }
+
+      /* .form-content h3.form-title {
+          margin-bottom: 30px;
+      } */
+
+      .form-content p {
+          color: #fff;
+          text-align: left;
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 20px;
+          /* margin-bottom: 30px; */
+      }
+      label {
+        color: #fff;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      }
+
+    </style>
+
+
+  </head>
+
+
+  <body class="container-fluid" >
+
+
+    <!-- <div align='center'>
+      <button type="button" class='btn btn-primary' >Subscribe to Email Notifications?</button>
+    </div> -->
+    <div align='center' style="color: azure;">
+      <p><h1>CoWin ASAP</h1> AN AUTOMATIC VACCINE SLOTS AVAILIBILITY CHECKER.</p>
+      <p>On submit, Page is reloaded every 30 seconds and if slots are availability they will be displayed with pincode.</p>
+      <p>Slots Availability will be checked for provided filters only.</p>
+    </div>
+
+
+
+    <div class="form-body">
+      <div class="row">
+          <div class="form-holder">
+              <div class="form-content">
+                  <div class="form-items">
+                      <h3>Cowin vaccine availability Filters</h3>
+                      <p>Fill in the data below.</p>    
+                      <form action="{{ url_for('process') }}">
+
+                        <label for="district_id">DISTRICT</label>
+                        <select id="district_id" name="district_id">
+                          {% for district_name, district_id in district_mapping.items() %}
+                            <option value="{{ district_id }}">{{ district_name }} : {{ district_id }}</option>
+                          {% endfor %}
+                        </select>
+                      
+                        <label for="date">Date</label>
+                        <select id="date" name="date">
+                          {% for date in dates %}
+                            <option value="{{ date }}">{{ date }}</option>
+                          {% endfor %}
+                        </select>
+
+                        <label for="vaccine">Vaccine</label>
+                        <select id="vaccine" name="vaccine">
+                            <option value="any">Any</option>
+                            <option value="COVISHIELD">COVISHIELD</option>
+                            <option value="COVAXIN">COVAXIN</option>
+                            <option value="Sputnik V">Sputnik V</option>
+                        </select>
+
+                        <label for="dose">Dose</label>
+                        <select id="dose" name="dose">
+                            <option value="any">Any</option>
+                            <option value=1>Dose 1</option>
+                            <option value=2>Dose 2</option>
+                        </select>
+
+                        <label for="age">Min Age</label>
+                        <select id="age" name="age">
+                            <option value="any">Any</option>
+                            <option value=18>18+</option>
+                            <option value=45>45+</option>
+                        </select>
+
+                        <label for="fee">Fee Type</label>
+                        <select id="fee" name="fee">
+                            <option value="any">Any</option>
+                            <option value='free'>Free</option>
+                            <option value=paid>Paid</option>
+                        </select>
+
+                        <label for="pincode">Pincode : </label>
+                        <input type="number" id="pincode" name="pincode">
+
+                        <input type="submit" value="Submit">
+
+                    </form>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    
+        <footer class="page-footer font-small" style="color:#fff">
+          <div class="text-center">Version=1.1   @ e s o t e r i i k o s</div>
+        </footer>
+
+    
+  </body>
+</html>
