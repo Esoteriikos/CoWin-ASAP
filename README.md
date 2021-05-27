@@ -46,13 +46,13 @@ Note : If date parameter is not mentioned -
 Before 10am : Today's date
 After 10am : Tomorrow's date
 
- district_id = find your district id from home page
- date = dd-mm-yyyy
- fee = free or paid
- dose = 1 or 2
- age = 18 or 45
- vaccine = covishield or covaxin or sputnik+v
-notification = 0 or 1 
+ 1. district_id = find your district id from home page
+ 2. date = dd-mm-yyyy
+ 3. fee = free or paid
+ 4. dose = 1 or 2
+ 5. age = 18 or 45
+ 6. vaccine = covishield or covaxin or sputnik+v
+ 7. notification = 0 or 1   if 1 then click enable at top
 
 Example : 
 🔸Mumbai 18+  dose 1
