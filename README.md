@@ -10,6 +10,8 @@ Set your filters and then submit
 Page will reload every 30 seconds (limit is 100 calls per 5 mins )
 
 You can keep this page open.
+This works even when browser is minimize and not killed/closed.
+
 As soon as it finds the match, a notification container will turn green and let you know slots are available and at which pincodes.
 
 Audio Notification :
@@ -18,6 +20,10 @@ If Yes, as soon as match is found, notification sound will be played.
 
 
 "CoWin Sign in" button : redirects to CoWin registeration in another tab making it easy to login, refer, and book a slot ASAP
+
+
+
+#### NOTE: Few browsers policy restricts website to autoplay audio. If you are not coming from home page or reloaded the website: click at top to enable.
 
 
 🟩ASAP Access links
