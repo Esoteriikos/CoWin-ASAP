@@ -36,7 +36,7 @@ Example:
 
  🟩 CoWin ASAP as API Wrapper 
 
-https://cowinasap.herokuapp.com/wrapper/?district_id=395&date=28-05-2021&vaccine=any&dose=any&age=any&fee=any&pincode=any&notification=0
+https://cowinasap.herokuapp.com/wrapper/?district_id=395&date=week&vaccine=any&dose=any&age=any&fee=any&pincode=any&notification=0
 Optional parameters :
 Everything except district id 
 
