@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta http-equiv="refresh" content="30"> -->
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- External JS Script -->
+    <script src="/static/main.js"></script> 
+    <!-- <script data-ad-client="ca-pub-9844000757223639" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>        -->
+    <style>
+        /* html, body {
+        height: 100%;
+        background-color: #152733; 
+        overflow: visible;
+        } */
+
+        .multiline {
+            white-space: pre-line;
+            font-size: 25px;
+            text-align: center;
+
+        }
+
+        .background {
+            background-image: linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clipboard {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 0;
+            padding: 15px;
+            border-radius: 3px;
+            background-image: linear-gradient(135deg, #FDEB71 10%, #F8D800 100%);
+            cursor: pointer;
+            color: #04048c;
+            font-family: 'Karla', sans-serif;
+            font-size: 16px;
+            position: relative;
+            top: 0;
+            transition: all .2s ease;
+        }
+
+        /* .contiainer {
+                margin-left: 10px;
+                margin-right:10px;
+            } */
+        .table {
+            background-color: antiquewhite;
+        }
+
+        .record-success {
+            background-color: #96f199
+        }
+
+        .record-failed {
+            background-color: #faafaf
+        }
+
+        #available-msg {
+            font-size: 40px;
+        }
+
+        #available-at-pincode-msg {
+            font-size: 25px;
+        }
+
+        button:hover {
+            top: 5px;
+        }
+    </style>
+
+</head>
+
+<body class="wrapper" onload='verify();'>
+
+
+    <!-- hitwebcounter Code START -->
+    <a href="https://www.hitwebcounter.com" target="_blank"></a>
+    <!-- <img align='center' src="https://hitwebcounter.com/counter/counter.php?page=7818061&style=0001&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /> -->
+
+    <div class="container-fluid">
+
+        <p align="right" id="time"></p>
+
+        <p align='center' style="color: black; font-size: 20px; background-color:lavenderblush;"><b>Will Refresh Data
+                Automatically every 30s. No reload required</b> </p>
+        <!-- <p align='center' style="color: black; font-size: 20px; background-color:lavenderblush;" id="autoplay-warning"><i id="enabler">Browser Enabler: CLICK HERE</i></p> -->
+
+        <p align="center">
+            <a href=/>
+                <button class="btn btn-primary" style="height:35px;width:150px">HOME PAGE</button>
+            </a>
+        </p>
+
+
+        <!-- <p class="alert alert-error" align="center" id="fetch-failed"></p> -->
+
+        <div class="alert alert-info multiline" id="scroll-up-to">
+            <p class='multiline' id='filters-info'></p>
+        </div>
+
+        <div id="btn-verifier">
+            <center>
+                <button align="center" onclick="load();" class="clipboard">Click me Enable. No force reload required.
+                    Data will be updated Automatically.</button>
+            </center>
+        </div>
+
+        <div class="alert alert-info">
+            <p class='multiline' id='data-update-time'></p>
+        </div>
+
+
+        <div id="verified">
+            <div id="available-div">
+                <p align="center" id="available-msg"></p>
+                <p align="center" id="available-at-pincode-msg"></p>
+                <a align="center" href="https://selfregistration.cowin.gov.in/" class="btn btn-primary" target="="
+                    _blank>CoWIN SIGN IN</a>
+            </div>
+
+
+            <div class="background">
+                <center>
+                    <button class="clipboard">Click me to copy current Quick Acess Url</button>
+                    <p id='url-copied' style="font-size: 22px; font-weight: 600;"></p>
+                </center>
+            </div>
+
+            <div class="container-fluid">
+                <table class="table" id="cowinData" border="1" style="margin-top: 10px;"></table>
+            </div>
+
+            <p class="alert alert-warning" align="center" id="no-data-msg"></p>
+            <p class="alert alert-danger multiline" align="center" id="error-msg"></p>
+
+            <p align="center">
+                <a href=#scroll-up-to>
+                    <button class="btn btn-warning" style="height:45px;width:180px">Scroll to TOP</button>
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <audio id="beeper">
+        <source src="../static/success.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+
+</body>
+
+<footer class="container-fluid bg-4 text-center" style="font-size: 16px;">
+    <p style="color: black;">CoWIN ASAP Made By <a style="color: rgb(78, 214, 255);" target="_blank"
+            href="https://www.github.com/esoteriikos">E S O T E R I I K O S</a></p>
+</footer>
+
+</html>
