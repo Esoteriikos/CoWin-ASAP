@@ -23,9 +23,6 @@ If Yes, as soon as match is found, notification sound will be played.
 
 
 
-#### NOTE: Few browsers policy restricts website to autoplay audio. If you are not coming from home page or reloaded the website: click at top to enable.
-
-
 🟩ASAP Access links
 
 Click on the copy url button and save the url 
@@ -42,17 +39,16 @@ Example:
 https://cowinasap.herokuapp.com/wrapper/?district_id=395&date=28-05-2021&vaccine=any&dose=any&age=any&fee=any&pincode=any&notification=0
 Optional parameters :
 Everything except district id 
-Note : If date parameter is not mentioned - 
-Before 10am : Today's date
-After 10am : Tomorrow's date
+
 
  1. district_id = find your district id from home page
- 2. date = dd-mm-yyyy
+ 2. date = dd-mm-yyyy / d-m-yyyy / today / tomorrow / week  
  3. fee = free or paid
  4. dose = 1 or 2
  5. age = 18 or 45
  6. vaccine = covishield or covaxin or sputnik+v
- 7. notification = 0 or 1   if 1 then click enable at top
+ 7. notification = 0 or 1   if 1 then click enable 
+ 8. min_doses = Natural number (>=1) To filter records on doses available
 
 Example : 
 🔸Mumbai 18+  dose 1
@@ -63,6 +59,7 @@ https://cowinasap.herokuapp.com/wrapper/?district_id=395&dose=1&age=18
 Important District IDs
 Mumbai : 395, 
 Thane     : 392, 
-Chennai  : 571, 
+Chennai   : 571,
+New Delhi : 140
 Bangalore Rural : 275, 
 Bangalore  Urban : 265
