@@ -10,7 +10,7 @@ Set your filters and then submit
 Page will reload every 30 seconds (limit is 100 calls per 5 mins )
 
 You can keep this page open.
-This works even when browser is minimize and not killed/closed.
+This works even when browser is minimize and not killed/closed. Browsers tend to put tabs in sleep after some time especially mobile browsers. there not much can do. Try to diable tabs discarding flag or not to put that tab in sleep setting
 
 As soon as it finds the match, a notification container will turn green and let you know slots are available and at which pincodes.
 
